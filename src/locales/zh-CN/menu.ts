@@ -49,4 +49,7 @@ export default {
   'menu.editor.flow': '流程编辑器',
   'menu.editor.mind': '脑图编辑器',
   'menu.editor.koni': '拓扑编辑器',
+  'menu.subscription-converter': '订阅转换',
+  'menu.base64-encode-decode': 'Base64 加密解密',
+  'menu.pcap-generator': 'PCAP 生成器',
 };
