@@ -61,4 +61,7 @@ export default defineConfig({
       projectName: 'swagger',
     },
   ],
+  headScripts: [
+    '!function(){var a=sessionStorage,b="GITHUB_PAGES_REDIRECT",c=a.getItem(b);c&&(a.removeItem(b),history.replaceState(null,"",c))}()',
+  ],
 });

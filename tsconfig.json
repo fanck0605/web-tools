@@ -35,7 +35,6 @@
     ".eslintrc.js",
     ".prettierrc.js",
     "jest.config.js",
-    "plugin.ts",
     "mock/*"
   ],
   "exclude": ["node_modules", "build", "dist", "scripts", "src/.umi/*", "webpack", "jest"]
