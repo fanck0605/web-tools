@@ -7,7 +7,7 @@
   {
     path: '/subscription-converter',
     name: 'subscription-converter',
-    component: './ComingSoon',
+    component: './SubscriptionConverter',
   },
   {
     path: '/base64-encode-decode',
