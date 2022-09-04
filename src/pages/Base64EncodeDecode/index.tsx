@@ -2,6 +2,8 @@ import type { FC } from 'react';
 import { useState } from 'react';
 import { Card, Input } from 'antd';
 import { PageContainer } from '@ant-design/pro-components';
+import Base64 from 'crypto-js/enc-base64';
+import Utf8 from 'crypto-js/enc-utf8';
 
 const Base64EncodeDecode: FC = () => {
   const [text, setText] = useState('');
@@ -20,7 +22,8 @@ const Base64EncodeDecode: FC = () => {
             const input = e.target.value;
             setText(input);
             try {
-              setBase64(btoa(input));
+              const utf8Bytes = Utf8.parse(input);
+              setBase64(Base64.stringify(utf8Bytes));
             } catch (ex: any) {
               console.error(ex);
             }
@@ -36,7 +39,8 @@ const Base64EncodeDecode: FC = () => {
             const input = e.target.value;
             setBase64(input);
             try {
-              setText(atob(input));
+              const utf8Bytes = Base64.parse(input);
+              setText(Utf8.stringify(utf8Bytes));
             } catch (ex: any) {
               console.error(ex);
             }
