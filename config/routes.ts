@@ -24,6 +24,7 @@
     redirect: '/welcome',
   },
   {
+    path: '*',
     component: './404',
   },
 ];
