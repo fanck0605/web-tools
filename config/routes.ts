@@ -12,7 +12,7 @@
   {
     path: '/base64-encode-decode',
     name: 'base64-encode-decode',
-    component: './ComingSoon',
+    component: './Base64EncodeDecode',
   },
   {
     path: '/pcap-generator',
