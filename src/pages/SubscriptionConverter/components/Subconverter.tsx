@@ -153,6 +153,10 @@ const Subconverter: React.FC<CardProps> = (props) => {
           <Input placeholder="请输入文件名称" allowClear />
         </Form.Item>
 
+        <Form.Item label="排除节点" name="exclude">
+          <Input placeholder="请输入排除节点关键字，支持正则" allowClear />
+        </Form.Item>
+
         <Form.Item label="启用 UDP" name="enableUdp">
           <Select placeholder="请选择是否启用 UDP" allowClear>
             <Select.Option value="true">开启</Select.Option>

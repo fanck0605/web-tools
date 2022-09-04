@@ -22,6 +22,7 @@ interface SubscriptionConfig {
   ruleUrl: string;
   filename?: string;
   enableUdp?: string;
+  exclude?: string;
 }
 
 type SelectiveSubscriptionConfig = {
@@ -35,6 +36,7 @@ const dumpSubscriptionUrl = ({
   ruleUrl,
   filename,
   enableUdp,
+  exclude,
 }: SubscriptionConfig) => {
   const encodedSourceUrls = encodeURIComponent(
     sourceUrls
@@ -48,6 +50,7 @@ const dumpSubscriptionUrl = ({
   let subscriptionUrl = `${backendUrl}?target=${targetType}&url=${encodedSourceUrls}&config=${encodedRuleUrl}`;
 
   if (filename) subscriptionUrl += `&filename=${filename}`;
+  if (exclude) subscriptionUrl += `&exclude=${encodeURIComponent(exclude)}`;
   if (enableUdp) subscriptionUrl += `&udp=${enableUdp}`;
 
   return subscriptionUrl;
@@ -72,6 +75,9 @@ const loadSubscriptionUrl = (subscriptionUrl: string) => {
 
   const filename = searchParams.get('filename');
   if (filename) config.filename = filename;
+
+  const exclude = searchParams.get('exclude');
+  if (exclude) config.exclude = exclude;
 
   const enableUdp = searchParams.get('udp');
   if (enableUdp === 'true' || enableUdp === 'false') config.enableUdp = enableUdp;
