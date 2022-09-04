@@ -19,7 +19,6 @@ const Base64EncodeDecode: FC = () => {
           onChange={(e) => {
             const input = e.target.value;
             setText(input);
-            console.log(input.length);
             try {
               setBase64(btoa(input));
             } catch (ex: any) {
