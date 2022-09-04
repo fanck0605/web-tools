@@ -52,7 +52,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     // 增加一个 loading 的状态
     childrenRender: (children, props) => {
       // if (initialState?.loading) return <PageLoading />;
-      return (
+      return isDev ? (
         <>
           {children}
           {!props.location?.pathname?.includes('/login') && (
@@ -69,6 +69,8 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
             />
           )}
         </>
+      ) : (
+        children
       );
     },
     ...initialState?.settings,
