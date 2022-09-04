@@ -4,7 +4,7 @@ import { LinkOutlined } from '@ant-design/icons';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
-import { history, Link } from '@umijs/max';
+import { Link } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -21,12 +21,6 @@ export async function getInitialState(): Promise<{
   const fetchUserInfo = async () => {
     return undefined;
   };
-
-  const redirect = sessionStorage.getItem('GITHUB_PAGES_REDIRECT');
-  if (redirect) {
-    history.replace(redirect);
-    sessionStorage.removeItem('GITHUB_PAGES_REDIRECT');
-  }
 
   return {
     fetchUserInfo,
