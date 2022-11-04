@@ -17,7 +17,7 @@
   {
     path: '/pcap-generator',
     name: 'pcap-generator',
-    component: './ComingSoon',
+    component: './HttpPcapGenerator',
   },
   {
     path: '/',
